@@ -13,6 +13,9 @@ import { EditInvoiceFormComponent } from './components/edit-invoice-form/edit-in
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { SideNavBarComponent } from './pages/side-nav-bar/side-nav-bar.component';
+import { invoiceReducer } from './store/invoice.reducer';
+import { InvoiceEffects } from './store/invoice.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,9 @@ import { SideNavBarComponent } from './pages/side-nav-bar/side-nav-bar.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([]),
+    HttpClientModule,
+    StoreModule.forRoot({ invoices: invoiceReducer }),
+    EffectsModule.forRoot([InvoiceEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [

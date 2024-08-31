@@ -7,7 +7,7 @@ import { Invoice } from '../models/invoice.model';
   providedIn: 'root',
 })
 export class InvoiceService {
-  private dataUrl = 'assets/data/data.json';
+  private dataUrl = '/assets/data/data.json';
   private invoicesSubject = new BehaviorSubject<Invoice[]>([]);
   invoices$ = this.invoicesSubject.asObservable();
 

@@ -1,12 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+
 body {
-  @apply font-spartan bg-lightBg dark:bg-darkBg;
+  
   font-weight: 500;
   margin: 0;
   padding: 0;
