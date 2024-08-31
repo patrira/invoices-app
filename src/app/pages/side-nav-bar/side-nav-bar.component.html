@@ -8,7 +8,7 @@
       class="absolute top-1/2 left-0 w-full h-full bg-[#9277FF] transform -translate-y-1/2 lg:transform-none lg:rounded-br-2xl lg:rounded-tl-2xl"
     ></div>
     <img
-      src="/assets/images/logo.svg"
+      src="/src/assets/images/logo.svg"
       alt="Icon"
       class="w-8 h-auto object-contain z-10 lg:w-10"
     />
@@ -21,8 +21,8 @@
       <img
         [src]="
           (isDarkMode$ | async)
-            ? '/assets/images/icon-moon.svg'
-            : '/assets/images/icon-sun.svg'
+            ? '/images/icon-moon.svg'
+            : '/images/icon-sun.svg'
         "
         [alt]="(isDarkMode$ | async) ? 'Light Mode' : 'Dark Mode'"
         class="w-5 h-5 lg:w-6 lg:h-6"
@@ -33,7 +33,7 @@
 
     <div class="avatar-container p-4 lg:p-6">
       <img
-        src="/assets/images/image-avatar.jpg"
+        src="/src/assets/images/image-avatar.jpg"
         alt="Profile"
         class="avatar-image w-8 h-8 rounded-full lg:w-10 lg:h-10"
       />

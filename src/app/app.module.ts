@@ -16,6 +16,7 @@ import { SideNavBarComponent } from './pages/side-nav-bar/side-nav-bar.component
 import { invoiceReducer } from './store/invoice.reducer';
 import { InvoiceEffects } from './store/invoice.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterDropdownComponent } from './components/filter-dropdown/filter-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     EditInvoiceFormComponent,
     HomeComponent,
     HeaderComponent,
-    SideNavBarComponent
+    SideNavBarComponent,
+    FilterDropdownComponent
   ],
   imports: [
     BrowserModule,
