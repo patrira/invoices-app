@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/app.state';
 import { selectInvoiceById } from '../../store/invoice.selectors';
-import { Invoice } from '../../core/models/invoice.model';
+import { Invoice } from '../../models/invoice.model';
 import { Location } from '@angular/common';
-import * as InvoiceActions from '../../store/invoice.action';
+import * as InvoiceActions from '../../store/invoice.actions';
 
 @Component({
   selector: 'app-invoice-details',
