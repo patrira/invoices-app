@@ -10,13 +10,12 @@ import { InvoiceListComponent } from './components/invoice-list/invoice-list.com
 import { InvoiceDetailsComponent } from './components/invoice-details/invoice-details.component';
 import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
 import { EditInvoiceFormComponent } from './components/edit-invoice-form/edit-invoice-form.component';
-
-
-
 import { invoiceReducer } from './store/invoice.reducer';
 import { InvoiceEffects } from './store/invoice.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterDropdownComponent } from './components/filter-dropdown/filter-dropdown.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { pageModule } from './pages/header/page.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,10 @@ import { FilterDropdownComponent } from './components/filter-dropdown/filter-dro
     HttpClientModule,
     StoreModule.forRoot({ invoices: invoiceReducer }),
     EffectsModule.forRoot([InvoiceEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    FormsModule,
+    pageModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()
