@@ -44,7 +44,6 @@
         </p>
       </div>
 
-      <!-- Fixed Buttons on Mobile Screens -->
       <div
         class="fixed md:relative bottom-0 inset-x-0 p-4 flex items-center justify-center bg-white dark:bg-darkBlue shadow md:shadow-none md:mt-0 md:space-x-4 md:flex md:items-center md:justify-end md:p-0"
       >
@@ -55,12 +54,14 @@
             Edit
           </button>
           <button
+            (click)="deleteInvoice(invoice.id)"
             class="p-3 px-6 rounded-full bg-red text-lightBg font-bold font-spartan hover:bg-opacity-50 transition-all duration-300 ease-in-out"
           >
             Delete
           </button>
           <button
-            *ngIf="invoice.status !== 'Paid'"
+            *ngIf="invoice.status === 'Pending'"
+            (click)="markAsPaid()"
             class="p-3 px-6 rounded-full bg-primary text-lightBg font-bold font-spartan hover:bg-opacity-50 transition-all duration-300 ease-in-out"
           >
             Mark as Paid
