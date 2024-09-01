@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import * as InvoiceActions from './invoice.actions';
+import * as InvoiceActions from '../store/invoice.actions';
 
 export interface InvoiceState {
   invoices: any[];
@@ -23,7 +23,6 @@ export const invoiceReducer = createReducer(
     invoices,
     error: null,
   })),
-
   on(InvoiceActions.loadInvoicesFailure, (state, { error }) => ({
     ...state,
     error,

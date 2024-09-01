@@ -10,9 +10,9 @@ import { InvoiceListComponent } from './components/invoice-list/invoice-list.com
 import { InvoiceDetailsComponent } from './components/invoice-details/invoice-details.component';
 import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
 import { EditInvoiceFormComponent } from './components/edit-invoice-form/edit-invoice-form.component';
-import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './pages/header/header.component';
-import { SideNavBarComponent } from './pages/side-nav-bar/side-nav-bar.component';
+
+
+
 import { invoiceReducer } from './store/invoice.reducer';
 import { InvoiceEffects } from './store/invoice.effects';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,9 +25,7 @@ import { FilterDropdownComponent } from './components/filter-dropdown/filter-dro
     InvoiceDetailsComponent,
     InvoiceFormComponent,
     EditInvoiceFormComponent,
-    HomeComponent,
-    HeaderComponent,
-    SideNavBarComponent,
+    
     FilterDropdownComponent
   ],
   imports: [

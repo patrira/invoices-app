@@ -1,13 +1,11 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
+/* Tailwind CSS Configuration */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
+/* Global styles */
 body {
-  
+  @apply font-spartan bg-lightBg dark:bg-darkBg;
   font-weight: 500;
   margin: 0;
   padding: 0;

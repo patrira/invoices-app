@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { AppState } from '../store/app.state';
+import { AppState } from './app.state';
 import { Invoice } from '../models/invoice.model';
 
 export const selectInvoiceState = (state: AppState) => state.invoices;
