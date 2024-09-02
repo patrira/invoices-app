@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class InvoiceListComponent implements OnInit, OnDestroy {
   isFormOpen = false;
   isDropdownOpen = false;
-  arrowIcon = 'assets/images/icon-arrow-down.svg';
+  arrowIcon = 'assets/icons/icon-arrow-down.svg';
   invoices: Invoice[] = [];
   filteredInvoices: Invoice[] = [];
   invoicesSubscription!: Subscription;
@@ -42,8 +42,8 @@ export class InvoiceListComponent implements OnInit, OnDestroy {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
     this.arrowIcon = this.isDropdownOpen
-      ? 'assets/images/icon-arrow-up.svg'
-      : 'assets/images/icon-arrow-down.svg';
+      ? 'assets/icons/icon-arrow-up.svg'
+      : 'assets/icons/icon-arrow-down.svg';
   }
 
   onStatusChange(selectedStatus: any) {
@@ -68,7 +68,6 @@ export class InvoiceListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/invoice', invoiceId]);
   }
 
-  deleteInvoice(id: string) {}
   openInvoiceForm() {
     this.isFormOpen = true;
   }

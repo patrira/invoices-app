@@ -7,6 +7,7 @@ import { Invoice } from '../../models/invoice.model';
 import { Location } from '@angular/common';
 import * as InvoiceActions from '../../store/invoice.actions';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-invoice-details',
@@ -14,13 +15,17 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./invoice-details.component.css'],
 })
 export class InvoiceDetailsComponent implements OnInit, OnDestroy {
+  [x: string]: any;
   invoice!: Invoice | null;
+  showDeleteModal = false;
+  isFormOpen = false;
   private subscription: Subscription = new Subscription();
 
   constructor(
     private route: ActivatedRoute,
     private store: Store<AppState>,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,7 +37,6 @@ export class InvoiceDetailsComponent implements OnInit, OnDestroy {
       .subscribe((invoice) => {
         this.invoice = invoice;
         if (!invoice) {
-          // Dispatch action to load a single invoice if not found in state
           this.store.dispatch(InvoiceActions.loadInvoice({ id }));
         }
       });
@@ -50,9 +54,7 @@ export class InvoiceDetailsComponent implements OnInit, OnDestroy {
   }
 
   deleteInvoice(id: string): void {
-    if (confirm('Are you sure you want to delete this invoice?')) {
-      this.store.dispatch(InvoiceActions.deleteInvoice({ id }));
-    }
+    this.showDeleteModal = true;
   }
 
   goBack(): void {
@@ -61,5 +63,30 @@ export class InvoiceDetailsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  handleDeleteConfirmed(): void {
+    if (this.invoice) {
+      this.store.dispatch(
+        InvoiceActions.deleteInvoice({ id: this.invoice.id })
+      );
+    }
+    this.showDeleteModal = false;
+  }
+
+  handleDeleteCancelled(): void {
+    this.showDeleteModal = false;
+  }
+  editInvoice(): void {
+    if (this.invoice) {
+      this.router.navigate(['/invoice/edit', this.invoice.id]);
+    }
+  }
+  openInvoiceForm() {
+    this.isFormOpen = true;
+  }
+
+  closeInvoiceForm() {
+    this.isFormOpen = false;
   }
 }

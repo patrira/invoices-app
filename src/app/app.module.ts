@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilterDropdownComponent } from './components/filter-dropdown/filter-dropdown.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { pageModule } from './pages/header/page.module';
+import { DeleteConfirmationComponent } from './pages/delete-confirmation/delete-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { pageModule } from './pages/header/page.module';
     InvoiceFormComponent,
     EditInvoiceFormComponent,
     
-    FilterDropdownComponent
+    FilterDropdownComponent,
+          DeleteConfirmationComponent
   ],
   imports: [
     BrowserModule,

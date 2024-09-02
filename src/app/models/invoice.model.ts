@@ -14,6 +14,7 @@ export interface Invoice {
 }
 
 export interface Address {
+  streetAddress: any;
   street: string;
   city: string;
   postCode: string;
@@ -26,3 +27,7 @@ export interface InvoiceItem {
   price: number;
   total: number;
 }
+export function loadInvoices(p0: { invoice: Invoice; }): any {
+  throw new Error('Function not implemented.');
+}
+
